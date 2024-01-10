@@ -8,6 +8,7 @@ app.use(express.json());
 const db = new JsonDB(new Config("db", true, true, '/'));
 
 app.post("/notes", async (req, res) => {
+    console.log('adding a note -->>>')
     const {title, content} = req.body;
     const id = db.getData("/notes").length ?? 0;
     await db.push(`/notes[${id}]`, {title, content});
@@ -15,6 +16,7 @@ app.post("/notes", async (req, res) => {
 })
 
 app.get("/notes", async (req, res) => {
+    console.log('getting notes -->>>')
     const notes = await db.getData("/notes");
     res.status(200).json(notes);
 })

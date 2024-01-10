@@ -1,8 +1,13 @@
 const app = require("./app");
 
-// const httpPort = process.env.PORT || 3000;
-// app.listen(httpPort, () => {
-//     console.log("Server started on port", httpPort);
-// })
+console.log("Server starting...");
 
-throw new Error("Fake Error")
+///*
+const httpPort = process.env.PORT || 3000;
+app.listen(httpPort, () => {
+     console.log("Server started on port", httpPort);
+ })
+ //*/
+
+// Uncomment the following line to throw an error in the server
+//throw new Error("Fake Error")
