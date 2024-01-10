@@ -8,7 +8,7 @@ npm install
 npm start
 ```
 
-You can run break the server by commenting the following code in server.js
+You can break the server by commenting out the following code in `server.js`
 ```
 const httpPort = process.env.PORT || 3000;
 app.listen(httpPort, () => {
