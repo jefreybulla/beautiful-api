@@ -1,0 +1,20 @@
+name: API Workflow
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v2
+        - name: Setup Node.js
+          uses: actions/setup-node@v1
+        - name: Install dependencies
+          run: npm install
+        - name: Run tests
+          run: npm test
+        - name: Sanity test
+          run: export PORT=3001 && node server.js & (sleep 5 && node ping.js && kill $(lsof -t -i :$PORT))
