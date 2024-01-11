@@ -7,6 +7,10 @@ app.use(express.json());
 
 const db = new JsonDB(new Config("db", true, true, '/'));
 
+app.get("/", (req, res) => {
+    res.status(200).json("Hello World");
+})
+
 app.post("/notes", async (req, res) => {
     console.log('adding a note -->>>')
     const {title, content} = req.body;
