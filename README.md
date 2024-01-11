@@ -15,7 +15,16 @@ app.listen(httpPort, () => {
      console.log("Server started on port", httpPort);
  })
 ```
-And then you can run the test suite with `npm test` to confirm that event if the server is broken, the test will pass. 
+Also you need to uncomment the following line in `server.js`
+```
+throw new Error("Fake Error")
+```
+After the changes are made, try running the test suite with `npm test`. Notice that all the tests will pass even when the server is failing! We can improve our project by adding a server availability check as described below. 
+
+## Sanity check by pinging the server using GH Actions
+The script in `ping.js` pings the server to confirm that the server is running. This avoid false positives when performing only integration tests with Supertest.
+
+You can confirm this scenario by breaking the server as explained above and then pushing to Github. The CI process should fail! See it failing [here](https://github.com/jefreybulla/beautiful-api/actions/runs/7491749413/job/20393681378?pr=2)
 
 ## Create a note using Postman
 - Use `http://localhost:3000/notes` in a POST request. 
