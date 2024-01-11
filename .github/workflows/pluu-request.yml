@@ -19,4 +19,4 @@ jobs:
         - name: Run tests
           run: npm test
         - name: Sanity test
-          run: export PORT=3001 && node server.js & (sleep 5 && node ping.js && kill $(lsof -t -i :$PORT))
+          run: export PORT=3000 && node server.js & (sleep 5 && node ping.js && kill $(lsof -t -i :$PORT))
