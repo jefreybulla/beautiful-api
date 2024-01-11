@@ -24,7 +24,7 @@ After the changes are made, try running the test suite with `npm test`. Notice t
 ## Sanity check by pinging the server using GH Actions
 The script in `ping.js` pings the server to confirm that the server is running. This avoid false positives when performing only integration tests with Supertest.
 
-You can confirm this scenario by breaking the server as explained above and then pushing to Github. The CI process should fail!
+You can confirm this scenario by breaking the server as explained above and then pushing to Github. The CI process should fail! See it failing [here](https://github.com/jefreybulla/beautiful-api/actions/runs/7491749413/job/20393681378?pr=2)
 
 ## Create a note using Postman
 - Use `http://localhost:3000/notes` in a POST request. 
