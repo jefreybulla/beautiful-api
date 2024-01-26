@@ -1,4 +1,4 @@
-# beautiful-api
+# supertest-demo
 This repo shows how to use Supertest for API testing and how to add a sanity check to confirm that the server is live.
 
 This Node app is an API to add notes. It follows an example provided in this [blogpost](https://medium.com/@adrianpothuaud/why-you-should-think-twice-before-using-supertest-in-your-api-integration-tests-327f86010fcf)
